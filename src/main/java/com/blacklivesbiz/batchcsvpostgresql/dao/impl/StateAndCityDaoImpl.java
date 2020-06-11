@@ -1,4 +1,4 @@
-package impl;
+package com.blacklivesbiz.batchcsvpostgresql.dao.impl;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -14,11 +14,11 @@ import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
-import dao.StateAndCityDao;
-import model.StateAndCity;
+import com.blacklivesbiz.batchcsvpostgresql.dao.StateAndCityDao;
+import com.blacklivesbiz.batchcsvpostgresql.model.StateAndCity;
 
 @Repository
-	public class StateAndCityDaoImpl extends JdbcDaoSupport implements StateAndCityDao {
+public class StateAndCityDaoImpl extends JdbcDaoSupport implements StateAndCityDao {
 	 
 	  @Autowired
 	  DataSource dataSource;
@@ -30,7 +30,7 @@ import model.StateAndCity;
 	 
 	  @Override
 	  public void insert(List<? extends StateAndCity> StatesAndCities) {
-	    String sql = "INSERT INTO statesandcities " + "(id, city, abbr, state) VALUES (?, ?, ?, ?)";
+	    String sql = "INSERT INTO statesandcities " + "(id, city, abbr, name) VALUES (?, ?, ?, ?)";
 	    getJdbcTemplate().batchUpdate(sql, new BatchPreparedStatementSetter() {
 	      public void setValues(PreparedStatement ps, int i) throws SQLException {
 	        StateAndCity stateandcity = StatesAndCities.get(i);
@@ -59,7 +59,7 @@ import model.StateAndCity;
 	    	stateandcity.setCity((String) row.get("city"));
 	    	stateandcity.setAbbr((String) row.get("abbr"));
 	    	stateandcity.setName((String) row.get("name"));
-	      result.add(stateandcity);
+	    	result.add(stateandcity);
 	    }
 	 
 	    return result;

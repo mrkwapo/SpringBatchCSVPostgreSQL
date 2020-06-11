@@ -1,10 +1,10 @@
-package step;
+package com.blacklivesbiz.batchcsvpostgresql.step;
 import java.util.List;
 
 import org.springframework.batch.item.ItemWriter;
 
-import dao.StateAndCityDao;
-import model.StateAndCity;
+import com.blacklivesbiz.batchcsvpostgresql.dao.StateAndCityDao;
+import com.blacklivesbiz.batchcsvpostgresql.model.StateAndCity;
 
 public class Writer implements ItemWriter<StateAndCity> {
 	private final StateAndCityDao stateAndCityDao;

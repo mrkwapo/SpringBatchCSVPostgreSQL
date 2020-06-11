@@ -1,10 +1,11 @@
-package step;
+package com.blacklivesbiz.batchcsvpostgresql.step;
 import java.util.Random;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
-import model.StateAndCity;
+
+import com.blacklivesbiz.batchcsvpostgresql.model.StateAndCity;
 
 public class Processor implements ItemProcessor<StateAndCity, StateAndCity> {
 	 
@@ -21,7 +22,7 @@ public class Processor implements ItemProcessor<StateAndCity, StateAndCity> {
 	 
 	    final StateAndCity fixedStateAndCity = new StateAndCity(r.nextLong(), city, abbr, name);
 	 
-	    log.info("Converting (" + stateandcity + ") into (" + fixedStateAndCity + ")");
+	    log.info("working on (" + stateandcity + ")");
 	 
 	    return fixedStateAndCity;
 	  }

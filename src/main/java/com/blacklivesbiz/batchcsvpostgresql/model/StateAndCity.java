@@ -1,4 +1,4 @@
-package model;
+package com.blacklivesbiz.batchcsvpostgresql.model;
 
 public class StateAndCity {
 
@@ -51,7 +51,7 @@ public class StateAndCity {
 	
 	@Override
 	  public String toString() {
-	    return String.format("StateAndCity[id=%d , city='%s', abr='%s', name='%s']", id, city, abbr, name);
+	    return String.format("StateAndCity[id=%d , city='%s', abbr='%s', name='%s']", id, city, abbr, name);
 	  }
 	
 }
