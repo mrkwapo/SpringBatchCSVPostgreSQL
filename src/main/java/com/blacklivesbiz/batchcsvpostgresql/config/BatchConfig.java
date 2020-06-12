@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.task.SimpleAsyncTaskExecutor;
 import org.springframework.core.task.TaskExecutor;
 
-import com.blacklivesbiz.batchcsvpostgresql.dao.StateAndCityDao;
+import com.blacklivesbiz.batchcsvpostgresql.dao.StateAndCityRepository;
 import com.blacklivesbiz.batchcsvpostgresql.model.StateAndCity;
 import com.blacklivesbiz.batchcsvpostgresql.step.Listener;
 import com.blacklivesbiz.batchcsvpostgresql.step.Processor;
@@ -29,7 +29,7 @@ public class BatchConfig {
 	public StepBuilderFactory stepBuilderFactory;
 	 
 	@Autowired
-	public StateAndCityDao stateAndCityDao;
+	public StateAndCityRepository stateAndCityDao;
 	 
 	@Bean
 	public Job job() {

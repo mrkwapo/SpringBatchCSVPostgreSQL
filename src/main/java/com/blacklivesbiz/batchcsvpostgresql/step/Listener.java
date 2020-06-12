@@ -7,15 +7,15 @@ import org.springframework.batch.core.BatchStatus;
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.listener.JobExecutionListenerSupport;
 
-import com.blacklivesbiz.batchcsvpostgresql.dao.StateAndCityDao;
+import com.blacklivesbiz.batchcsvpostgresql.dao.StateAndCityRepository;
 import com.blacklivesbiz.batchcsvpostgresql.model.StateAndCity;
 
 public class Listener extends JobExecutionListenerSupport  {
 	private static final Logger log = LoggerFactory.getLogger(Listener.class);
 	 
-	private final StateAndCityDao stateAndCityDao;
+	private final StateAndCityRepository stateAndCityDao;
 	 
-	public Listener(StateAndCityDao stateAndCityDao) {
+	public Listener(StateAndCityRepository stateAndCityDao) {
 	  this.stateAndCityDao = stateAndCityDao;
 	}
 	 
